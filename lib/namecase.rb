@@ -60,7 +60,9 @@ module NameCase
     localstring.gsub!(/\b(Bin|Binti|Binte)\b/, 'bin') # bin, binti, binte Arabic
     localstring.gsub!(/\bAp\b/, 'ap') # ap Welsh.
     # ben Hebrew or forename Ben.
-    localstring.gsub!(/\bBen(?=\s+\w)/, 'ben') unless ignore[:hebrew]
+    unless options.dig(:ignore, :hebrew)
+      localstring.gsub!(/\bBen(?=\s+\w)/, 'ben')
+    end
     localstring.gsub!(/\bDell([ae])\b/, 'dell\1') # della and delle Italian.
     localstring.gsub!(/\bD([aeiou])\b/, 'd\1') # da, de, di Italian; du French; do Brasil
     localstring.gsub!(/\bD([ao]s)\b/, 'd\1') # das, dos Brasileiros
