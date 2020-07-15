@@ -51,6 +51,7 @@ module NameCase
         localstring.gsub!(/\bMacKlin/, 'Macklin')
         localstring.gsub!(/\bMacKmin/, 'Mackmin')
         localstring.gsub!(/\bMacQuarie/, 'Macquarie')
+        localstring.gsub!(/\bMacNoll/, 'Macnoll')
       end
       localstring.gsub!('Macmurdo', 'MacMurdo')
     end
